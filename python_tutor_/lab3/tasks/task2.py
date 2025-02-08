@@ -2,7 +2,7 @@
 def grams_to_ounces(grams):
     return 28.3495231 * grams
 
-print(grams_to_ounces(100))  # Example: 100 grams to ounces
+print(grams_to_ounces(100))
 
 
 # 2
@@ -24,7 +24,6 @@ print(solve(35, 94))
 
 
 # 4
-
 def is_prime(n):
     return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
 
@@ -35,6 +34,7 @@ print(filter_prime([10, 3, 7, 12, 19, 4, 5, 13]))
 
 # 5
 from itertools import permutations
+
 
 def string_permutations(s):
     for perm in permutations(s):
