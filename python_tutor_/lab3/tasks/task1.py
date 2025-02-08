@@ -1,5 +1,8 @@
 # 1
 
+from typing import Literal
+
+
 class StringHandler:
     def __init__(self):
         self.string = ""
@@ -96,7 +99,7 @@ class Account:
             print(f"Withdrawn: {amount}. New balance: {self.balance}")
 
 
-acc = Account("John Doe", 1000)
+acc = Account("Alibek", 1000)
 acc.deposit(500)
 acc.withdraw(300)
 acc.withdraw(1500)
