@@ -70,33 +70,38 @@ def delete_file(file_path):
 def main():
     path = input("Enter a path: ")
     
-    print("\n1. List directories, files, and all items:")
+    # Task 1
+    print("\n1. Listing directories and files:")
     list_directories_files(path)
     
-    print("\n2. Check access to the path:")
+    # Task 2
+    print("\n2. Checking path access:")
     check_path_access(path)
     
-    print("\n3. Check if the path exists and split into directory and filename:")
+    # Task 3
+    print("\n3. Checking path and splitting:")
     check_path_and_split(path)
     
-    print("\n4. Count lines in a text file:")
-    file_path = input("Enter the file path: ")
+    # Task 4
+    file_path = input("\n4. Enter file path to count lines: ")
     count_lines_in_file(file_path)
     
-    print("\n5. Write a list to a file:")
+    # Task 5
     my_list = ['apple', 'banana', 'cherry']
     write_list_to_file('output.txt', my_list)
+    print("\n5. List written to 'output.txt'")
     
-    print("\n6. Generate 26 text files (A.txt to Z.txt):")
+    # Task 6
     generate_alphabet_files()
+    print("\n6. Generated 26 files A.txt to Z.txt")
     
-    print("\n7. Copy contents of a file to another file:")
-    source = input("Enter source file path: ")
-    destination = input("Enter destination file path: ")
+    # Task 7
+    source = input("\n7. Enter source file to copy: ")
+    destination = input("Enter destination file: ")
     copy_file(source, destination)
     
-    print("\n8. Delete a file by specified path:")
-    file_to_delete = input("Enter the file path to delete: ")
+    # Task 8
+    file_to_delete = input("\n8. Enter file path to delete: ")
     delete_file(file_to_delete)
 
 # Run the program
