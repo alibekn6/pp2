@@ -104,6 +104,4 @@ def main():
     file_to_delete = input("\n8. Enter file path to delete: ")
     delete_file(file_to_delete)
 
-# Run the program
-if __name__ == "__main__":
-    main()
+main()

@@ -6,7 +6,6 @@ print(next(myit))
 print(next(myit))
 
 
-
 mystr = "banana"
 myit = iter(mystr)
 
@@ -29,9 +28,6 @@ mytuple = ("apple", "banana", "cherry")
 
 for x in mytuple:
   print(x)
-
-
-
 
 class MyNumbers:
   def __iter__(self):

@@ -11,17 +11,18 @@ def match_a_zero_or_more_b(text):
 
 def match_a_two_to_three_b(text):
     return bool(re.search(r'ab{2,3}', text))
-
+# 2 or 3 b's after a
 
 def find_lowercase_underscore_sequences(text):
     return re.findall(r'[a-z]+_[a-z]+', text)
-
+# example hello_world
 def find_uppercase_lowercase_sequences(text):
     return re.findall(r'[A-Z][a-z]+', text)
-
+# uppercase followed by lower
 
 def match_a_anything_b(text):
     return bool(re.search(r'a.*b$', text))
+# starts with a ends with b
 
 def replace_space_comma_dot_with_colon(text):
     return re.sub(r'[ ,.]', ':', text)
