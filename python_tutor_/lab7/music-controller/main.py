@@ -4,7 +4,6 @@ import os
 pygame.init()
 pygame.mixer.init()
 
-# Set up display
 WIDTH = 800
 HEIGHT = 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -19,7 +18,7 @@ BLACK = (0, 0, 0)
 font = pygame.font.Font(None, 36)
 
 
-music_dir = "music" # folder
+music_dir = "music"
 music_files = [f for f in os.listdir(music_dir) if f.endswith(('.mp3', '.wav', '.m4a'))]
 current_track = 0
 playing = False
@@ -48,7 +47,7 @@ def previous_track():
     current_track = (current_track - 1) % len(music_files)
     play_music()
 
-# Main game loop
+
 running = True
 while running:
 
@@ -58,24 +57,24 @@ while running:
 
     screen.fill(BLACK)
 
-    logo_x = WIDTH // 2 - logo_image.get_width() // 2  # Center horizontally
-    logo_y = HEIGHT // 4 - logo_image.get_height() // 2  # Position in the top quarter
+    logo_x = WIDTH // 2 - logo_image.get_width() // 2  
+    logo_y = HEIGHT // 4 - logo_image.get_height() // 2  
     screen.blit(logo_image, (logo_x, logo_y))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:  # Play/Stop
+            if event.key == pygame.K_SPACE:  
                 if playing:
                     stop_music()
                 else:
                     play_music()
-            elif event.key == pygame.K_RIGHT:  # Next track
+            elif event.key == pygame.K_RIGHT:
                 next_track()
-            elif event.key == pygame.K_LEFT:  # Previous track
+            elif event.key == pygame.K_LEFT:
                 previous_track()
 
-    # Display current track and status
+
     status = "Playing" if playing else "Stopped"
     current_song = music_files[current_track].split('.')[0]
     
@@ -95,12 +94,12 @@ while running:
     screen.blit(controls_text, (20, HEIGHT - 40))
     song_list = [os.path.splitext(song)[0] for song in song_list_dir]  # Optional: remove file extensions
 
-    # In your main game loop where you're drawing to the screen:
-    line_height = 30  # Adjust based on your font size
-    start_y = 500   # Starting Y position for the first line
-    start_x = 20     # X position for all lines
 
-    # Loop through each song and render it on a new line
+    line_height = 30 
+    start_y = 500
+    start_x = 20
+
+
     for i, song in enumerate(song_list):
         song_text = font.render(song, True, WHITE)
         screen.blit(song_text, (start_x, start_y + i * line_height))
