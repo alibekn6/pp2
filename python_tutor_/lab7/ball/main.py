@@ -20,13 +20,6 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-    # ball_x += ball_speed_x
-    # ball_y += ball_speed_y
-
-    # if ball_x + ball_radius > WIDTH or ball_x - ball_radius < 0:
-    #     ball_speed_x = -ball_speed_x
-    # if ball_y + ball_radius > HEIGHT or ball_y - ball_radius < 0:
-    #     ball_speed_y = -ball_speed_y
 
     keys = pygame.key.get_pressed()
 

@@ -60,6 +60,7 @@ while running:
     logo_x = WIDTH // 2 - logo_image.get_width() // 2  
     logo_y = HEIGHT // 4 - logo_image.get_height() // 2  
     screen.blit(logo_image, (logo_x, logo_y))
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
