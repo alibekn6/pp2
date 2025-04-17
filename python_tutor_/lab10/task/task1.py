@@ -1,20 +1,24 @@
 import psycopg2
 import csv
+import os
+from dotenv import load_dotenv
 
-conn = psycopg2.connect(
-    dbname="suppliers",
-    user="postgres",
-    password="post667",
-    host="localhost"
-)
+load_dotenv()
 
-cur = conn.cursor()
+
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT", 5432)
+
 
 def connect():
-    return psycopg2.connect(dbname="suppliers",
-        user="postgres",
-        password="post667",
-        host="localhost"
+    return psycopg2.connect(
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        host=DB_HOST
     )
 
 
@@ -137,7 +141,7 @@ def delete_user():
 
 # CLI Menu
 def main():
-    create_table() # already created in dev (local)
+    # create_table() # already created in dev (local)
     while True:
         print("\nPHONEBOOK MENU")
         print("1 Insert from CSV")
